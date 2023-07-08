@@ -1,0 +1,44 @@
+{
+  "name": "noise-app",
+  "version": "1.1.1",
+  "description": "NOISE的博客",
+  "main": "main.js",
+  "build": {
+    "appId": "com.example.my-electron-app",
+    "productName": "NOISE博客站",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "icon": "./icon.png",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "artifactName": "${productName}-v${version}-mac.${ext}"
+    },
+    "win": {
+      "icon": "./icon.png",
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "artifactName": "${productName}-v${version}-win.${ext}"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:mac": "electron-builder --mac --publish always",
+    "build:win": "electron-builder --win --publish always",
+    "build": "npm run build:mac && npm run build:win", 
+    "postbuild": "node moveFiles.js"
+  },  
+  "keywords": [],
+  "author": "NOISE <1129159201@qq.com>",
+  "homepage": "https://www.noisework.cn",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-builder": "^24.4.0",
+    "electron": "^25.2.0"
+  }
+}
