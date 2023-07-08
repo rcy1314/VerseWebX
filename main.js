@@ -17,7 +17,7 @@ function createWindow() {
   })
 
   win.loadURL('https://www.noiseblog.top') // 这里是打包任意网址，如需改为本地路径则需要删除这段或注解掉
-  // const indexPath = path.join(__dirname, 'patch', 'index.html'); // 请确保将需要打包的文件夹命名为patch，并将index.html文件放置在其中
+  // const indexPath = path.join(__dirname, 'patch', 'index.html'); // 请确保将需要打包的文件夹命名为patch，并将index.html文件放置在其中，如果文件夹内文件已存在请修改删除
   // win.loadFile(indexPath);
 
   win.webContents.on('will-navigate', (event, url) => {
